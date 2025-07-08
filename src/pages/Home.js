@@ -22,7 +22,7 @@ function Home() {
       <div>
         <button
           style={buttonStyle}
-          onClick={() => navigate('/registration')}
+          onClick={() => navigate('/register')}
         >
           Voter
         </button>
