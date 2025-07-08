@@ -1,11 +1,9 @@
-// src/pages/Home.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
   const navigate = useNavigate();
 
-  // Simple button style for clarity
   const buttonStyle = {
     margin: '20px',
     padding: '16px 32px',
