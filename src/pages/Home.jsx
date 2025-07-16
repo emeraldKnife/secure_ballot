@@ -17,14 +17,22 @@ function Home() {
   };
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '100px' }}>
+    <div className='min-h-screen w-[100vw] flex justify-center items-center flex-col' style={{ textAlign: 'center' }}>
       <h1>Welcome to the Online Voting System</h1>
       <div>
         <button
           style={buttonStyle}
           onClick={() => navigate('/register')}
         >
-          Voter
+          Register
+        </button>
+      </div>
+      <div>
+        <button
+          style={buttonStyle}
+          onClick={() => navigate('/vote')}
+        >
+          Vote
         </button>
       </div>
       <div>
