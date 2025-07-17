@@ -30,7 +30,7 @@ function Admin() {
     };
 
     return (
-        <div className="admin-container m-auto p-10 bg-gray-800 text-white rounded-lg shadow-lg min-h-screen w-[100vw]">
+        <div className="admin-container m-auto p-10 text-white rounded-lg shadow-lg min-h-screen w-[100vw]">
             <div className="theme-toggle">
                 <button className={`p-[15px] ${darkMode ? 'bg-[#2e8b57]' : 'bg-[#171d18]'} text-white border-none rounded-[4px] cursor-pointer transition duration-200`} onClick={() => setDarkMode(!darkMode)}>
                     {darkMode ? "Light" : "Dark"} Mode
@@ -38,7 +38,7 @@ function Admin() {
             </div>
 
             <div className="login-container">
-                <h2>Admin Login</h2>
+                <h2 className='text-4xl p-4 mx-4 font-bold '>Admin Login</h2>
                 <form onSubmit={handleSubmit} className="login-form">
                     <label>
                         Username:
