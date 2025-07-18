@@ -101,7 +101,6 @@ body {
   padding: 0;
   min-height: 100vh;
   transition: background 0.3s ease;
-  overflow: hidden;
 }
 
 body.light {
