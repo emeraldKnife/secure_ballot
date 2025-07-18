@@ -6,12 +6,12 @@ const positions = {
     { name: "Aditya Verma", image: "/avatar.jpg" },
     { name: "Neha Roy", image: "/avatar.jpg" },
   ],
-  ACC: [
+  "ACC": [
     { name: "Sahil Kumar", image: "/avatar.jpg" },
     { name: "Ishita Das", image: "/avatar.jpg" },
     { name: "Karan Mehta", image: "/avatar.jpg" },
   ],
-  HoSCA: [
+  "HoSCA": [
     { name: "Priya Gupta", image: "/avatar.jpg" },
     { name: "Rohan Singh", image: "/avatar.jpg" },
     { name: "Tanvi Sharma", image: "/avatar.jpg" },
