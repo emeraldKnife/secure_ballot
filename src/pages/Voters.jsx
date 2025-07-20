@@ -1,5 +1,3 @@
-import React from "react";
-
 const voters = [
   {
     name: "Riya Singh",
@@ -25,33 +23,43 @@ const voters = [
 
 const Voters = () => {
   return (
-    <div className="min-h-screen w-[100vw] bg-gradient-to-br from-gray-800 via-gray-900 to-black py-10 px-4">
+    <div className="font-mono min-h-screen w-full bg-black py-10 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-center text-gray-100 mb-10 drop-shadow-sm">
-          🗂️ Registered Voters
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-green-500 mb-10">
+          Registered Voters
         </h1>
 
-        <div className="overflow-x-auto shadow-xl rounded-2xl border border-blue-300 bg-white">
-          <table className="min-w-full text-sm md:text-base text-left table-auto">
-            <thead className="bg-blue-800 text-white">
+        <div className="overflow-x-auto shadow-2xl rounded-xl border-3 border-green-500 bg-gray-900">
+          <table className="min-w-full text-sm md:text-base text-left">
+            <thead className="bg-gray-800">
               <tr>
-                <th className="py-4 px-6 font-bold uppercase tracking-wide border-b border-blue-300">Name</th>
-                <th className="py-4 px-6 font-bold uppercase tracking-wide border-b border-blue-300">Email</th>
-                <th className="py-4 px-6 font-bold uppercase tracking-wide border-b border-blue-300">Public Key</th>
+                <th className="py-4 px-6 font-bold uppercase tracking-wide text-emerald-400 border-b border-green-500">
+                  Name
+                </th>
+                <th className="py-4 px-6 font-bold uppercase tracking-wide text-emerald-400 border-b border-green-500">
+                  Email
+                </th>
+                <th className="py-4 px-6 font-bold uppercase tracking-wide text-emerald-400 border-b border-green-500">
+                  Public Key
+                </th>
               </tr>
             </thead>
             <tbody>
               {voters.map((voter, index) => (
                 <tr
                   key={index}
-                  className={`transition-all duration-200 text-white ${
-                    index % 2 === 0 ? "bg-slate-600" : "bg-slate-800"
-                  } hover:bg-slate-900/80`}
+                  className={`transition-colors duration-200 ${
+                    index % 2 === 0 ? "bg-gray-800" : "bg-gray-800/80"
+                  } hover:bg-gray-700`}
                 >
-                  <td className="py-3 px-6 border-b border-slate-100 font-medium text-white">{voter.name}</td>
-                  <td className="py-3 px-6 border-b border-slate-100 text-white">{voter.email}</td>
-                  <td className="py-3 px-6 border-b border-slate-100">
-                    <div className="w-56 md:w-auto max-w-full overflow-x-auto whitespace-nowrap font-mono text-xs text-white scrollbar-thin scrollbar-thumb-blue-300 scrollbar-track-transparent">
+                  <td className="py-4 px-6 border-b border-gray-700 font-medium text-white">
+                    {voter.name}
+                  </td>
+                  <td className="py-4 px-6 border-b border-gray-700 text-gray-300">
+                    {voter.email}
+                  </td>
+                  <td className="py-4 px-6 border-b border-gray-700">
+                    <div className="w-56 md:w-auto max-w-full overflow-x-auto whitespace-nowrap font-mono text-xs text-emerald-300 scrollbar-thin scrollbar-thumb-emerald-500/30 scrollbar-track-transparent">
                       {voter.publicKey}
                     </div>
                   </td>

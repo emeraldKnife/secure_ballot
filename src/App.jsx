@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import Admin from './pages/Admin.jsx';
@@ -7,7 +6,6 @@ import Register from './pages/Register.jsx';
 import Voters from './pages/Voters.jsx';
 import Vote from './pages/Vote.jsx';
 import Votes from './pages/Votes.jsx';
-import './App.css';
 
 function App() {
   return (

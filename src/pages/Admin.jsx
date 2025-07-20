@@ -1,27 +1,15 @@
-import React from 'react';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Admin() {
-    const [darkMode, setDarkMode] = useState(
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches
-    );
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-
     const navigate = useNavigate();
-
-    useEffect(() => {
-        document.body.className = darkMode ? "dark" : "light";
-    }, [darkMode]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-        if (username === "test" && password === "1234") {
+        if (username === "test" && password === "1234") { 
             alert("Login successful!");
             navigate("/dashboard");
         } else {
@@ -30,36 +18,51 @@ function Admin() {
     };
 
     return (
-        <div className="admin-container m-auto p-10 text-white rounded-lg shadow-lg min-h-screen w-[100vw]">
-            <div className="theme-toggle">
-                <button className={`p-[15px] ${darkMode ? 'bg-[#2e8b57]' : 'bg-[#171d18]'} text-white border-none rounded-[4px] cursor-pointer transition duration-200`} onClick={() => setDarkMode(!darkMode)}>
-                    {darkMode ? "Light" : "Dark"} Mode
-                </button>
-            </div>
-
-            <div className="login-container">
-                <h2 className='text-4xl p-4 mx-4 font-bold '>Admin Login</h2>
-                <form onSubmit={handleSubmit} className="login-form">
-                    <label>
-                        Username:
+        <div className="font-mono min-h-screen w-full bg-black flex flex-col items-center justify-center p-4">
+            <div className="w-full max-w-md p-8 rounded-xl shadow-2xl bg-gray-900 border-3 border-green-500">
+                <h2 className="text-3xl font-bold mb-8 text-center">
+                    <span className="text-green-500">Admin Login</span>
+                </h2>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                        <label className="block mb-2 font-medium text-gray-300">
+                            Username
+                        </label>
                         <input
                             type="text"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 text-white"
                             required
                         />
-                    </label>
-                    <label>
-                        Password:
+                    </div>
+                    
+                    <div>
+                        <label className="block mb-2 font-medium text-gray-300">
+                            Password
+                        </label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 text-white"
                             required
                         />
-                    </label>
-                    {error && <p className="error">{error}</p>}
-                    <button type="submit"  className={`p-[15px] ${darkMode ? 'bg-[#2e8b57]' : 'bg-[#171d18]'} text-white border-none rounded-[4px] cursor-pointer transition duration-200`}>Login</button>
+                    </div>
+                    
+                    {error && (
+                        <div className="p-3 rounded-lg bg-red-900/50 text-red-300">
+                            {error}
+                        </div>
+                    )}
+                    
+                    <button 
+                        type="submit" 
+                        className="w-full py-3 px-4 rounded-lg font-bold bg-emerald-500 hover:bg-emerald-600 text-black transition-colors"
+                    >
+                        Login
+                    </button>
                 </form>
             </div>
         </div>
