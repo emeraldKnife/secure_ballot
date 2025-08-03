@@ -1,3 +1,5 @@
+import React from "react";
+
 function Dashboard() {
   return (
     <div className="font-mono min-h-screen w-full bg-black text-white flex flex-col">
